@@ -29,7 +29,7 @@
 | db| Initialisation et intéraction avec la BDD|
 | lib| Fonctions et types utilisé par le site et le terminal|
 | static| Dossier contenant les styles et contenu de la page (CSS, JS, images...)|
-| templates| Fichiers HTML de la page|
+| templates| Fichiers HTML de la page (base : contenant le fichier de base du site pour créer de nouvelles pages) |
 | date.go| Gestion des routes et lancement du serveur|
 
 # Problèmes :
