@@ -6,9 +6,9 @@
 
 ## Lancement du serveur :
 
-- Telecharger le dossier
-- Aller a la racine du dossier
-- Lancer la commande ``go run date.go``
+- Telecharger le dossier .
+- Aller a la racine du dossier .
+- Lancer la commande ``go run date.go`` .
 - Remplir les informations de MySQL pour le premier lancement :
 
 | Demandé | Exemple de réponse attendu |
@@ -34,6 +34,6 @@
 
 # Problèmes :
 
-- La fonctionnalité de like n'existe pas (juste récupéré mais pas posiible d'en ajouter)
-- La page de settings n'existe pas, ce qui renvoie une ``erreur 404``
-- La gestion des erreurs existe seulement pour ``erreur 404``, ``erreur lors de l'inscription ou connexion``
+- La fonctionnalité de like n'existe pas (juste récupéré mais pas possible d'en ajouter) .
+- La page de settings n'existe pas, ce qui renvoie une ``erreur 404`` .
+- La gestion des erreurs existe seulement pour ``erreur 404``, ``erreur lors de l'inscription ou connexion`` ( les autres renvoie une page blanche avec l'erreur dessus ) .
