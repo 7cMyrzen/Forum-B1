@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/connect.css">
+    <title>Connexion</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../static/images/dg-logo.png" alt="Logo" onclick="goTo('/')">
+        </div>
+        <div class="menu">
+            <div class="menu-option">
+                <img src="../static/images/dg-forum.png" alt="Forum" onclick="goTo('/forum')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-settings.png" alt="Settings" onclick="goTo('/settings')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-connect.png" alt="Connexion" onclick="goTo('/connect')">
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="body">
+        <div class="connect-zone">
+            <div class="login-form">
+                <h1>Connexion</h1>
+                <form action="/login" method="POST">
+                    <div class="media-login">
+                        <img src="../static/images/dg-google.png" alt="Google" onclick="goTo('/google')">
+                        <img src="../static/images/dg-facebook.png" alt="Facebook" onclick="goTo('/facebook')">
+                        <img src="../static/images/dg-twitter.png" alt="Twitter" onclick="goTo('/twitter')">
+                    </div>
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <button type="submit">Se connecter</button>
+                </form>  
+            </div>
+            <div class="register-form">
+                <h1>Inscription</h1>
+                <form action="/register" method="POST">
+                    <div class="media-login">
+                        <img src="../static/images/dg-google.png" alt="Google" onclick="goTo('/google')">
+                        <img src="../static/images/dg-facebook.png" alt="Facebook" onclick="goTo('/facebook')">
+                        <img src="../static/images/dg-twitter.png" alt="Twitter" onclick="goTo('/twitter')">
+                    </div>
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" required>
+                    <input type="email" name="email" placeholder="Adresse email" required>
+                    <input type="password" name="password" placeholder="Mot de passe" required>
+                    <input type="password" name="password2" placeholder="Confirmer le mot de passe" required>
+                    <button type="submit">S'inscrire</button>
+                </form>
+            </div>
+            <div class="hover-zone">
+                <div class="hz-img">
+                    <img src="../static/images/dg-hover-zone.png">
+                </div>
+                <div class="hz-text">
+                    <p id="accountExist">Vous n'avez pas encore de compte ?</p>
+                    <button id="changeModeButton" onclick="changeConnectMode()">Inscrivez-vous</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/connect.js"></script>
+</body>
+</html>

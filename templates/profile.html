@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/profile.css">
+    <title>Profil</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../static/images/dg-logo.png" alt="Logo" onclick="goTo('/')">
+        </div>
+        <div class="menu">
+            <div class="menu-option">
+                <img src="../static/images/dg-forum.png" alt="Forum" onclick="goTo('/forum')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-settings.png" alt="Settings" onclick="goTo('/settings')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-connect.png" alt="Connexion" onclick="goTo('/connect')">
+            </div>
+        </div>
+    </nav>
+
+
+
+    <div class="body">
+        <div class="left">
+            <div class="profile-card">
+                <div class="profile-card-top">
+                    <img src="{{.Image}}" alt="Profile" href="">
+                    <h1>{{.Username}}</h1>
+                    <p>{{.Email}}</p>
+                    <p>{{.Description}}</p>
+                    <p>{{.Creation}}</p>   
+                </div>
+                <div class="profile-card-bottom">
+                    <div class="infox3">
+                        <img src="../static/images/dg-new-topic.png" alt="Topics" href="">
+                        <p id="nb-posts">{{.Nb_Posts}}</p>
+                    </div>
+
+                    <div class="infox3">
+                        <img src="../static/images/dg-forum.png" alt="Replies" href="">
+                        <p>{{.Nb_Comments}}</p>
+                    </div>
+
+                    <div class="infox3">
+                        <img src="../static/images/dg-likes.png" alt="Likes" href="">
+                        <p>{{.Nb_Likes}}</p>
+                    </div>
+                </div>
+                <div class="edit" onclick="openModal()">
+                    <img src="../static/images/dg-edit.png" alt="Edit">
+                </div>
+                <div class="logout" onclick="logout()">
+                    <img src="../static/images/dg-logout.png" alt="Logout">
+                </div>
+            </div>
+        </div>
+
+        <div class="right">
+            <div class="posts-card">
+
+                {{range .Posts}}
+                <div class="post" id="{{.ID}}">
+                    <div class="topic">
+                        <h1>{{.Title}}</h1>
+                        <p>{{.Content}}</p>
+                    </div>
+                    <div class="info">
+                        <div class="comments">
+                            <img src="../static/images/dg-forum.png" alt="Replies">
+                            <p>{{.NbComs}}</p>
+                        </div>
+                        <div class="likes">
+                            <img src="../static/images/dg-likes.png" alt="Likes">
+                            <p>{{.NbLikes}}</p>
+                        </div>
+                        <div class="date">
+                            <img src="../static/images/dg-calendar.png" alt="Date">
+                            <p>{{.Creation}}</p>
+                        </div>
+                    </div>
+                    <div class="delete">
+                        <div class="img">
+                            <img src="../static/images/dg-delete.png" alt="Delete" onclick="deleteTopic('{{.ID}}')">
+                        </div>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </div>
+    </div>
+
+    <div class="modal" id="modal">
+        <div class="editor-header">
+            <h1>Modifier le profil</h1>
+            <span class="close" onclick="closeModal()">&times;</span>
+        </div>
+        <div class="editor-body">
+            <form id="form">
+                <div class="pfp">
+                    <img src="{{.Image}}" alt="Profile" id="ProfileImage">
+                </div>
+                <div class="ued">
+                    <input type="text" name="username" placeholder="Nom d'utilisateur" value="{{.Username}}" required id="username">
+                    <input type="email" name="email" placeholder="Adresse email" value="{{.Email}}" required id="email">
+                    <input type="text" name="description" placeholder="Description" value="{{.Description}}" required class="desc" id="desc">
+                </div>
+            </form>
+        </div>
+        <div class="editor-footer">
+            <button onclick="submitForm()">Enregistrer</button>
+        </div>
+    </div>
+    <div class="overlay" id="overlay"></div>
+
+
+
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/profile.js"></script>
+</body>
+</html>

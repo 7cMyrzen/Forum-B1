@@ -1,0 +1,481 @@
+.body {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    .left {
+        width: 45%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .profile-card {
+            position: relative;
+            width: 90%;
+            height: 90%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border-radius: 5%;
+            background-color: var(--cream-white);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            .profile-card-top {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                img {
+                    width: 40%;
+                    height: auto;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    overflow: hidden;
+                }
+                h1 {
+                    font-size: 2em;
+                    color: var(--dark-blue);
+                    margin: 10px 0;
+                    overflow: hidden;
+                }
+                p {
+                    font-size: 1em;
+                    color: var(--dark-blue);
+                    margin: 10px 0;
+                    overflow: hidden;
+                }
+            }
+            .profile-card-bottom {
+                width: 100%;
+                height: 50%;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                .infox3 {
+                    width: 45%;
+                    height: 45%;
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: center;
+                    align-items: center;
+                    background-color: var(--nav-background);
+                    border: 3px solid white;
+                    border-radius: 5%;
+                    margin: 5px;
+                    overflow: hidden;
+                    img {
+                        width: 30%;
+                        height: auto;
+                        margin: 10px;
+                        overflow: hidden;
+                    }
+                    p {
+                        font-size: 1em;
+                        color: white;
+                        margin: 10px;
+                        overflow: hidden;
+                    }
+                }
+            }
+            .edit {
+                position: absolute;
+                top: 5%;
+                left: 5%;
+                width: 5vw;
+                height: 5vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--nav-background);
+                border: 3px solid white;
+                border-radius: 50%;
+                overflow: hidden;
+                transition: 0.5s ease-in-out;
+                img {
+                    width: 50%;
+                    height: auto;
+                    margin: 5px;
+                    overflow: hidden;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: bisque;
+                    img {
+                        filter: brightness(1.5);
+                        filter: hue-rotate(180deg);
+                    }
+                }
+            }
+            .logout {
+                position: absolute;
+                top: 5%;
+                right: 5%;
+                width: 5vw;
+                height: 5vw;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: var(--nav-background);
+                border: 3px solid white;
+                border-radius: 50%;
+                overflow: hidden;
+                transition: 0.5s ease-in-out;
+                img {
+                    width: 50%;
+                    height: auto;
+                    margin: 5px;
+                    overflow: hidden;
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: bisque;
+                    img {
+                        filter: brightness(1.5);
+                        filter: hue-rotate(180deg);
+                    }
+                }
+            }
+        }
+    }
+    .right {
+        width: 55%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        .posts-card {
+            width: 90%;
+            height: 90%;
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: repeat(auto-fill, 120px);
+            justify-content: center;
+            justify-items: center;
+            align-items: center;
+            border-radius: 5%;
+            background-color: var(--nav-background);
+            box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.1);
+            overflow-y: scroll;
+            overflow-x: hidden;
+            .post {
+                transition: 0.5s ease-in-out;
+                width: 90%;
+                height: 100px;
+                margin: 20px auto;
+                padding: 5px;
+                border-radius: 30px;
+                border: 1px solid white;
+                background-color: var(--background);
+                color: bisque;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                .topic {
+                    width: 50%;
+                    height: 100%;
+                    padding: 5px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    h1 {
+                        font-size: 1.5em;
+                        margin: 5px;
+                        overflow: hidden;
+                    }
+                    p {
+                        font-size: 1em;
+                        margin: 5px;
+                        overflow: hidden;
+                    }
+                }
+                .info {
+                    width: 30%;
+                    height: 100%;
+                    padding: 5px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    .comments {
+                        width: 100%;
+                        height: calc(100% / 3);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        overflow: hidden;
+                        img {
+                            width: auto;
+                            height: 80%;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                        p {
+                            font-size: 1em;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                    }
+                    .likes {
+                        width: 100%;
+                        height: calc(100% / 3);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        overflow: hidden;
+                        img {
+                            width: auto;
+                            height: 80%;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                        p {
+                            font-size: 1em;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                    }
+                    .date {
+                        width: 100%;
+                        height: calc(100% / 3);
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: flex-start;
+                        align-items: center;
+                        overflow: hidden;
+                        img {
+                            width: auto;
+                            height: 80%;
+                            overflow: hidden;
+                        }
+                        p {
+                            font-size: 1em;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                    }
+                }
+                .delete {
+                    width: 20%;
+                    height: 100%;
+                    padding: 5px 10px;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: center;
+                    align-items: center;
+                    overflow: hidden;
+                    .img {
+                        width: 5vw;
+                        height: 5vw;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: var(--nav-background);
+                        border: 3px solid white;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        transition: 0.5s ease-in-out;
+                        img {
+                            width: 50%;
+                            height: auto;
+                            margin: 5px;
+                            overflow: hidden;
+                        }
+                        &:hover {
+                            cursor: pointer;
+                            background-color: rgb(134, 0, 0);
+                            border: 3px solid black;
+                            img {
+                                filter: brightness(1.5);
+                                filter: hue-rotate(180deg);
+                            }
+                        }
+                    }
+                }
+                &:hover {
+                    cursor: pointer;
+                    background-color: var(--cream-white);
+                }
+            }
+        }
+    }
+}
+.modal {
+    position: absolute;
+    z-index: 999999999;
+    width: 75vw;
+    height: 75vh;
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--cream-white);
+    border-radius: 80px;
+    overflow: hidden;
+    .editor-header {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--nav-background);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1);
+        color: white;
+        overflow: hidden;
+        h1 {
+            position: relative;
+            font-size: 2em;
+            margin: 10px;
+            overflow: hidden;
+        }
+        span {
+            position: absolute;
+            top: 4%;
+            right: 4%;
+            width: 5vw;
+            height: 5vw;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--nav-background);
+            border: 3px solid white;
+            border-radius: 50%;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+            img {
+                width: 50%;
+                height: auto;
+                margin: 5px;
+                overflow: hidden;
+            }
+            &:hover {
+                cursor: pointer;
+                background-color: rgb(134, 0, 0);
+                border: 3px solid black;
+                img {
+                    filter: brightness(1.5);
+                    filter: hue-rotate(180deg);
+                }
+            }
+        }
+    }
+    .editor-body {
+        width: 100%;
+        height: 80%;
+        display: flex;
+        overflow: hidden;
+        form {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            .pfp {
+                width: 40%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                img {
+                    width: 90%;
+                    height: auto;
+                    aspect-ratio: 1/1;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    &:hover {
+                        cursor: pointer;
+                    }
+                }
+            }
+            .ued {
+                width: 60%;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                overflow: hidden;
+                input {
+                    width: 80%;
+                    height: 10%;
+                    margin: 10px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    border: 1px solid var(--nav-background);
+                    background-color: var(--background);
+                    color: var(--cream-white);
+                    overflow: hidden;
+                }
+                .desc {
+                    width: 80%;
+                    height: 50%;
+                    margin: 10px;
+                    padding: 5px;
+                    border-radius: 10px;
+                    border: 1px solid var(--nav-background);
+                    background-color: var(--background);
+                    color: var(--cream-white);
+                    overflow: hidden;
+                }
+            }
+        }
+    }
+    .editor-footer {
+        width: 100%;
+        height: 10%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: var(--nav-background);
+        box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1);
+        color: white;
+        overflow: hidden;
+        button {
+            width: 20%;
+            height: 50%;
+            margin: 10px;
+            padding: 5px;
+            border-radius: 10px;
+            border: 1px solid white;
+            background-color: var(--nav-background);
+            color: white;
+            overflow: hidden;
+            transition: 0.5s ease-in-out;
+            &:hover {
+                cursor: pointer;
+                background-color: bisque;
+                color: var(--nav-background);
+            }
+        }
+    }
+}
+
+.overlay {
+    position: absolute;
+    z-index: 99999999;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(100, 100, 100, 0.5);
+    overflow: hidden;
+}

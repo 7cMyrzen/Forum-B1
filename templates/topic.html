@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/main.css">
+    <link rel="stylesheet" href="../static/css/topic.css">
+    <title>Topic</title>
+</head>
+<body>
+ 
+    <nav class="navbar">
+        <div class="logo">
+            <img src="../static/images/dg-logo.png" alt="Logo" onclick="goTo('/')">
+        </div>
+        <div class="menu">
+            <div class="menu-option">
+                <img src="../static/images/dg-forum.png" alt="Forum" onclick="goTo('/forum')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-settings.png" alt="Settings" onclick="goTo('/settings')">
+            </div>
+            <div class="menu-option">
+                <img src="../static/images/dg-connect.png" alt="Connexion" onclick="goTo('/connect')">
+            </div>
+        </div>
+    </nav>
+ 
+ 
+ 
+    <div class="body">
+        <div class="topic">
+            <div class="topic-card">
+                <div class="topic-user">
+                    <img src="{{ .Post.AuthorPic}}" alt="profil">
+                    <h1>{{ .Post.Author}}</h1>
+                </div>
+                <div class="topic-content">
+                    <h1>{{ .Post.Title}}</h1>
+                    <p>{{ .Post.Content}}</p>
+                    <div class="topic-bottomBar">
+                        <div class="tb">
+                            <img src="../static/images/dg-likes.png" alt="Like">
+                            <p>{{ .Post.NbLikes}}</p>
+                        </div>
+                        <div class="tb">
+                            <img src="../static/images/dg-forum.png" alt="Comment">
+                            <p>{{ .Post.NbComs}}</p>
+                        </div>
+                        <div class="tb">
+                            <img src="../static/images/dg-calendar.png" alt="Share">
+                            <p>{{ .Post.Creation}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="comments">
+            
+            {{ range .Comments}}
+            <div class="comment">
+                <div class="comment-user">
+                    <img src="{{ .AuthorPic}}" alt="profil">
+                    <h1>{{ .Author}}</h1>
+                </div>
+                <div class="comment-content">
+                    <p>{{ .Content}}</p>
+                </div>
+            </div>
+            {{ end}}
+        </div>
+    </div>
+ 
+    <div class="modal-add" onclick="addCom()">
+        <img src="../static/images/dg-new-topic.png">
+    </div>
+
+    <div class="modal-com">
+        <div class="comment">
+            <form id="com-form" action="/new-com" method="post" >
+                <textarea name="comment" id="comment" placeholder="Entrer votre commentaire ici."></textarea>
+                <input type="number" name="id" id="id" value="{{ .Post.ID}}" hidden>
+            </form>
+        </div>
+        <div class="buttons">
+            <button onclick="closeCom()">Annuler</button>
+            <button onclick="submitForm()">Envoyer</button>
+        </div>
+    </div>
+
+    <div class="overlay" id="overlay"></div>
+ 
+    <script src="../static/js/main.js"></script>
+    <script src="../static/js/topic.js"></script>
+</body>
+</html>
