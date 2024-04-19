@@ -18,7 +18,7 @@ func AddUser(username, email, password string) (int, error) {
 	GetDB()
 	creationDate := time.GetCurrentTime()
 	description := "Nouvel utilisateur"
-	profilePicture, _ := image.ImageToBase64("static/images/userpfp.jpg")
+	profilePicture, _ := image.ImageToBase64("static/images/userpfp.png")
 
 	insert, err := db.Prepare("INSERT INTO users(username, email, password, description, profile_picture, created_at) VALUES(?, ?, ?, ?, ?, ?)")
 	if err != nil {
