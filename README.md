@@ -10,6 +10,7 @@
 - Aller a la racine du dossier
 - Lancer la commande ``go run date.go``
 - Remplir les informations de MySQL pour le premier lancement :
+
 | Demandé | Exemple de réponse attendu |
 | ----------- | ----------- |
 | Host| localhost ou adresse IP  ( ex : 192.168.1.1 ) |
