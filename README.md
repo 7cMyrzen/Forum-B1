@@ -17,7 +17,7 @@
 | Port | Port de MySQL  ( ex : 3306 ) |
 | DbName | Nom de la base de donnée à utiliser  ( ex : forum ) |
 | UserName | Nom d'utilisateur MySQL pouvant crééer et gérer les tables  ( ex : root ) |
-| Password | Mot de passe de l'utilisateur  ( ex : root ) |
+| Password | Mot de passe de l'utilisateur  ( ex : root1234 ) |
 - Se rendre sur le site avec l'adresse ``http://localhost:8080`` ou ``http://(adresse IP):8080`` affiché dans le terminal pour les pc du même réseau.
 
 ## Contenu du projet :
