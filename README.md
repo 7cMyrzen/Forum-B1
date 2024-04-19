@@ -31,3 +31,9 @@
 | static| Dossier contenant les styles et contenu de la page (CSS, JS, images...)|
 | templates| Fichiers HTML de la page|
 | date.go| Gestion des routes et lancement du serveur|
+
+# Problèmes :
+
+- La fonctionnalité de like n'existe pas (juste récupéré mais pas posiible d'en ajouter)
+- La page de settings n'existe pas, ce qui renvoie une ``erreur 404``
+- La gestion des erreurs existe seulement pour ``erreur 404``, ``erreur lors de l'inscription ou connexion``
