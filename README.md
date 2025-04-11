@@ -34,6 +34,6 @@
 
 # Problèmes :
 
-- La fonctionnalité de like n'existe pas (juste récupéré mais pas possible d'en ajouter) .
-- La page de settings n'existe pas, ce qui renvoie une ``erreur 404`` .
-- La gestion des erreurs existe seulement pour ``erreur 404``, ``erreur lors de l'inscription ou connexion`` ( les autres renvoie une page blanche avec l'erreur dessus ) .
+- La fonctionnalité de like n'existe pas (juste récupéré mais pas possible d'en ajouter).
+- La page de settings n'existe pas, ce qui renvoie une ``erreur 404``.
+- La gestion des erreurs existe seulement pour ``erreur 404``, ``erreur lors de l'inscription ou connexion`` ( les autres renvoie une page blanche avec l'erreur dessus ).
